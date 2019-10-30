@@ -12,12 +12,13 @@ public class InsertionSort implements SortingInterface {
         }
     }
 
-    public static void main(String args[]){
-        InsertionSort sorter = new InsertionSort();
-        SelectionSort sorter2 = new SelectionSort();
-        double[] vector = {10,1,27,2.4,-3,241,87,1.2};
+    /*public static void main(String args[]){
+        SortingInterface sorter = new InsertionSort();
+        SortingInterface sorter2 = new SelectionSort();
+        SortingInterface sorter3 = new QuickSort();
+        double[] vector = {10, 1.2, 14, 210, 0.4, -23, 72};
         sorter2.sort(vector);
         for (int i =0; i < vector.length; i++) System.out.println(vector[i]);
 
-    }
+    }*/
 }

@@ -6,9 +6,7 @@ public class SelectionSort implements SortingInterface {
         for (int i = unsortedVector.length - 1; i >= 1; i--) {
             int max = findMaxValueIndex(unsortedVector, i);
             if(max != i){
-                temp = unsortedVector[max];
-                unsortedVector[max] = unsortedVector[i];
-                unsortedVector[i] = temp;
+                HelpfulMethods.swap(unsortedVector, max, i);
             }
         }
     }
