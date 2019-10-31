@@ -1,19 +1,24 @@
 public class QuickSort implements SortingInterface {
     @Override
     public void sort(double[] unsortedVector) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(0);
-        stack.push(unsortedVector.length);
-        while (!stack.isStackEmpty()) {
-            int end = stack.pop();
-            int start = stack.pop();
-            if (end - start < 2) continue;
-            int p = start + ((end - start) / 2);
-            p = partition(unsortedVector, p, start, end);
-            stack.push(p + 1);
-            stack.push(end);
-            stack.push(start);
-            stack.push(p);
+        if (unsortedVector.length < 20) {
+            SortingInterface sorter = new InsertionSort();
+            sorter.sort(unsortedVector);
+        } else {
+            Stack<Integer> stack = new Stack<>();
+            stack.push(0);
+            stack.push(unsortedVector.length);
+            while (!stack.isStackEmpty()) {
+                int end = stack.pop();
+                int start = stack.pop();
+                if (end - start < 2) continue;
+                int p = start + ((end - start) / 2);
+                p = partition(unsortedVector, p, start, end);
+                stack.push(p + 1);
+                stack.push(end);
+                stack.push(start);
+                stack.push(p);
+            }
         }
     }
 
