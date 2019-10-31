@@ -1,48 +1,51 @@
 public class QuickSort implements SortingInterface {
     @Override
-    public void sort(double[] unsortedVector) {
+    public double[] sort(double[] unsortedVector) {
+        double[] output = unsortedVector.clone();
         if (unsortedVector.length < 20) {
             SortingInterface sorter = new InsertionSort();
-            sorter.sort(unsortedVector);
+            output = sorter.sort(output);
+            return output;
         } else {
             Stack<Integer> stack = new Stack<>();
             stack.push(0);
-            stack.push(unsortedVector.length);
+            stack.push(output.length);
             while (!stack.isStackEmpty()) {
                 int end = stack.pop();
                 int start = stack.pop();
                 if (end - start < 2) continue;
                 int p = start + ((end - start) / 2);
-                p = partition(unsortedVector, p, start, end);
+                p = partition(output, p, start, end);
                 stack.push(p + 1);
                 stack.push(end);
                 stack.push(start);
                 stack.push(p);
             }
         }
+        return output;
     }
 
-    private int partition(double[] unsortedVector, int position, int start, int end) {
+    private int partition(double[] vector, int position, int start, int end) {
         int l = start;
         int h = end - 2;
-        double pivot = unsortedVector[position];
-        double temp = unsortedVector[position];
-        unsortedVector[position] = unsortedVector[end - 1];
-        unsortedVector[end - 1] = temp;
+        double pivot = vector[position];
+        double temp = vector[position];
+        vector[position] = vector[end - 1];
+        vector[end - 1] = temp;
         while (l < h) {
-            if (unsortedVector[l] < pivot) {
+            if (vector[l] < pivot) {
                 l++;
-            } else if (unsortedVector[h] >= pivot) {
+            } else if (vector[h] >= pivot) {
                 h--;
             } else {
-                HelpfulMethods.swap(unsortedVector, l, h);
+                HelpfulMethods.swap(vector, l, h);
             }
         }
         int idx = h;
-        if (unsortedVector[h] < pivot) {
+        if (vector[h] < pivot) {
             idx++;
         }
-        HelpfulMethods.swap(unsortedVector, end - 1, idx);
+        HelpfulMethods.swap(vector, end - 1, idx);
         return idx;
     }
 

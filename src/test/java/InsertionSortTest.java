@@ -1,16 +1,38 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class InsertionSortTest {
-    SortingInterface sorter = new InsertionSort();
+    InsertionSort sorter = new InsertionSort();
 
     @Test
     public void sort() {
-        assertEquals(0,0.0, 0);
         double[] input = {11.3, 128, 231, 0.3, -23, 128, 12};
-        sorter.sort(input);
+        double[] output = sorter.sort(input);
         double[] correctOutput = {-23, 0.3, 11.3, 12, 128, 128, 231};
-        assertArrayEquals(input, correctOutput, 0);
+        assertArrayEquals(output, correctOutput, 0);
+    }
+
+    @Test
+    public void positiveCaseTime() {
+        long startTime, endTime, sum, duration, average;
+        int attempts = 20;
+        for (int i = 1000; i < 40000; i += 1000) {
+            double[] input = new double[i];
+            for (int j = 0; j < input.length; j++) {
+                input[j] = j;
+            }
+            sum = 0;
+            for (int k = 0; k < attempts; k++) {
+                startTime = System.nanoTime();
+                sorter.sort(input);
+                endTime = System.nanoTime();
+                duration = endTime - startTime;
+                sum += duration;
+            }
+            average = sum / attempts;
+            System.out.println(i + "\t" + average);
+        }
+
     }
 }

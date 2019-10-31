@@ -1,14 +1,15 @@
 public class SelectionSort implements SortingInterface {
     @Override
-    public void sort(double[] unsortedVector) {
+    public double[] sort(double[] unsortedVector) {
         if(unsortedVector == null || unsortedVector.length < 1) throw new IllegalArgumentException("Please give me normal array");
-        double temp;
-        for (int i = unsortedVector.length - 1; i >= 1; i--) {
-            int max = findMaxValueIndex(unsortedVector, i);
+        double[] output = unsortedVector.clone();
+        for (int i = output.length - 1; i >= 1; i--) {
+            int max = findMaxValueIndex(output, i);
             if(max != i){
-                HelpfulMethods.swap(unsortedVector, max, i);
+                HelpfulMethods.swap(output, max, i);
             }
         }
+        return output;
     }
 
     private int findMaxValueIndex(double[] vector, int lastIndex) {

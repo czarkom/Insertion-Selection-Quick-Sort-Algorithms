@@ -1,15 +1,17 @@
 public class InsertionSort implements SortingInterface {
     @Override
-    public void sort(double[] unsortedVector) {
-        for(int i = 1; i < unsortedVector.length; i++){
-            double x = unsortedVector[i];
+    public double[] sort(double[] unsortedVector) {
+        double[] output = unsortedVector.clone();
+        for(int i = 1; i < output.length; i++){
+            double x = output[i];
             int j = i - 1;
-            while(j >= 0 && x < unsortedVector[j]){
-                unsortedVector[j + 1] = unsortedVector[j];
+            while(j >= 0 && x < output[j]){
+                output[j + 1] = output[j];
                 j--;
             }
-            unsortedVector[j+1] = x;
+            output[j+1] = x;
         }
+        return output;
     }
 
     /*public static void main(String args[]){
