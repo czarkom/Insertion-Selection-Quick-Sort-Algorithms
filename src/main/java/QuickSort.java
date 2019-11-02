@@ -1,6 +1,7 @@
 public class QuickSort implements SortingInterface {
     @Override
     public double[] sort(double[] unsortedVector) {
+        if(unsortedVector == null || unsortedVector.length < 1 ) throw new IllegalArgumentException("Please give me normal array");
         double[] output = unsortedVector.clone();
         if (unsortedVector.length < 20) {
             SortingInterface sorter = new InsertionSort();

@@ -7,6 +7,18 @@ import static org.junit.Assert.assertArrayEquals;
 public class QuickSortTest {
     SortingInterface sorter = new QuickSort();
 
+    @Test(expected = IllegalArgumentException.class)
+    public void isExceptionForEmptyArrayThrownCorrectly(){
+        double input[] = {};
+        sorter.sort(input);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isExceptionForNullArgumentThrownCorrectly(){
+        sorter.sort(null);
+    }
+
+
     @Test
     public void sortMoreThan20Values() {
         double[] input = {11.3, 128, 231, 0.3, -23, 38.5, 128, 12, 15, 22.1, 1, 2, 4, 10, 76, 43, 22, 30, 0, 0, 1.2};
@@ -47,7 +59,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void positiveTimeTest() {
+    public void averageTimeTest() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 80;

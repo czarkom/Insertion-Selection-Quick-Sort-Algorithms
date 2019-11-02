@@ -7,6 +7,17 @@ import static org.junit.Assert.*;
 public class SelectionSortTest {
     SortingInterface sorter = new SelectionSort();
 
+    @Test(expected = IllegalArgumentException.class)
+    public void isExceptionForEmptyArrayThrownCorrectly(){
+        double input[] = {};
+        sorter.sort(input);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isExceptionForNullArgumentThrownCorrectly(){
+        sorter.sort(null);
+    }
+
     @Test
     public void sort() {
         double[] input = {11.3, 128, 231, 0.3, -23, 128, 12};

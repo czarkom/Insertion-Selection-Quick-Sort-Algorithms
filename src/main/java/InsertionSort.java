@@ -1,6 +1,7 @@
 public class InsertionSort implements SortingInterface {
     @Override
     public double[] sort(double[] unsortedVector) {
+        if(unsortedVector == null || unsortedVector.length < 1 ) throw new IllegalArgumentException("Please give me normal array");
         double[] output = unsortedVector.clone();
         for(int i = 1; i < output.length; i++){
             double x = output[i];
