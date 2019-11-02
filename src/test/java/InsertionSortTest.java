@@ -16,10 +16,33 @@ public class InsertionSortTest {
     @Test
     public void positiveCaseTime() {
         long startTime, endTime, sum, duration, average;
-        int attempts = 20;
-        for (int i = 1000; i < 40000; i += 1000) {
+        int attempts = 80;
+        for (int i = 1000; i < 400000; i += 1000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
+                input[j] = j;
+            }
+            sum = 0;
+            for (int k = 0; k < attempts; k++) {
+                startTime = System.nanoTime();
+                sorter.sort(input);
+                endTime = System.nanoTime();
+                duration = endTime - startTime;
+                sum += duration;
+            }
+            average = sum / attempts;
+            System.out.println(i + "\t" + average);
+        }
+
+    }
+
+    @Test
+    public void negativeCaseTime() {
+        long startTime, endTime, sum, duration, average;
+        int attempts = 80;
+        for (int i = 1000; i <= 400000; i += 1000) {
+            double[] input = new double[i];
+            for (int j = input.length - 1; j >= 0; j--) {
                 input[j] = j;
             }
             sum = 0;
