@@ -19,7 +19,7 @@ public class InsertionSortTest {
     public void positiveCaseTime() {
         long startTime, endTime, sum, duration, average;
         int attempts = 80;
-        for (int i = 1000; i < 400000; i += 1000) {
+        for (int i = 1000; i <= 100000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = j;
@@ -66,7 +66,7 @@ public class InsertionSortTest {
     public void negativeCaseTime() {
         long startTime, endTime, sum, duration, average;
         int attempts = 80;
-        for (int i = 1000; i <= 400000; i += 1000) {
+        for (int i = 1000; i <= 50000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = input.length - j;

@@ -5,7 +5,7 @@ public class Stack<T> {
 
     public T pop(){
        if(stack.size() > 0) return stack.remove(stack.size() - 1);
-       else throw new IllegalArgumentException("Stack is already empty");
+       else throw new IllegalStateException("Stack is already empty");
     }
 
     public void push(T item){

@@ -24,10 +24,10 @@ public class QuickSortTest {
     }
 
     @Test
-    public void negativeCaseTime() {
+    public void positiveCaseTime() {
         long startTime, endTime, sum, duration, average;
         int attempts = 80;
-        for (int i = 1000; i < 400000; i += 1000) {
+        for (int i = 1000; i < 100000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = j;
@@ -51,7 +51,7 @@ public class QuickSortTest {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 80;
-        for (int i = 1000; i < 400000; i += 1000) {
+        for (int i = 1000; i < 100000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = Math.round(r.nextDouble() * 10000);

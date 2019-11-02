@@ -19,11 +19,11 @@ public class SelectionSortTest {
     public void universalTimeTest() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
-        int attempts = 80;
-        for (int i = 1000; i < 400000; i += 1000) {
+        int attempts = 30;
+        for (int i = 1000; i < 100000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
-                input[j] = Math.round(r.nextDouble() * 10000);
+                input[j] = Math.round(r.nextDouble() * 100000);
             }
             sum = 0;
             for (int k = 0; k < attempts; k++) {
