@@ -19,6 +19,14 @@ public class SelectionSortTest {
     }
 
     @Test
+    public void sortOneElementArray(){
+        double[] input = {-23};
+        double[] output = sorter.sort(input);
+        double[] correctOutput = {-23};
+        assertArrayEquals(output, correctOutput, 0);
+    }
+
+    @Test
     public void sort() {
         double[] input = {11.3, 128, 231, 0.3, -23, 128, 12};
         double[] output = sorter.sort(input);
@@ -27,7 +35,7 @@ public class SelectionSortTest {
     }
 
     @Test
-    public void universalTimeTest() {
+    public void universalCaseTime() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 30;

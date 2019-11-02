@@ -8,13 +8,21 @@ public class InsertionSortTest {
     InsertionSort sorter = new InsertionSort();
 
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForEmptyArrayThrownCorrectly(){
+    public void isExceptionForEmptyArrayThrownCorrectly() {
         double input[] = {};
         sorter.sort(input);
     }
 
+    @Test
+    public void sortOneElementArray() {
+        double[] input = {-23};
+        double[] output = sorter.sort(input);
+        double[] correctOutput = {-23};
+        assertArrayEquals(output, correctOutput, 0);
+    }
+
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForNullArgumentThrownCorrectly(){
+    public void isExceptionForNullArgumentThrownCorrectly() {
         sorter.sort(null);
     }
 
@@ -50,7 +58,7 @@ public class InsertionSortTest {
     }
 
     @Test
-    public void universalTimeTest() {
+    public void universalCaseTime() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 80;

@@ -18,6 +18,13 @@ public class QuickSortTest {
         sorter.sort(null);
     }
 
+    @Test
+    public void sortOneElementArray(){
+        double[] input = {-23};
+        double[] output = sorter.sort(input);
+        double[] correctOutput = {-23};
+        assertArrayEquals(output, correctOutput, 0);
+    }
 
     @Test
     public void sortMoreThan20Values() {
@@ -59,11 +66,11 @@ public class QuickSortTest {
     }
 
     @Test
-    public void averageTimeTest() {
+    public void negativeCaseTime() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 80;
-        for (int i = 1000; i < 100000; i += 2000) {
+        for (int i = 1000; i < 50000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = Math.round(r.nextDouble() * 10000);
