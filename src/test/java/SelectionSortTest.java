@@ -2,24 +2,24 @@ import org.junit.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class SelectionSortTest {
     SortingInterface sorter = new SelectionSort();
 
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForEmptyArrayThrownCorrectly(){
+    public void isExceptionForEmptyArrayThrownCorrectly() {
         double input[] = {};
         sorter.sort(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForNullArgumentThrownCorrectly(){
+    public void isExceptionForNullArgumentThrownCorrectly() {
         sorter.sort(null);
     }
 
     @Test
-    public void sortOneElementArray(){
+    public void sortOneElementArray() {
         double[] input = {-23};
         double[] output = sorter.sort(input);
         double[] correctOutput = {-23};

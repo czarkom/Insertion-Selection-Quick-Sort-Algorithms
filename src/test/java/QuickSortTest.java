@@ -8,18 +8,18 @@ public class QuickSortTest {
     SortingInterface sorter = new QuickSort();
 
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForEmptyArrayThrownCorrectly(){
+    public void isExceptionForEmptyArrayThrownCorrectly() {
         double input[] = {};
         sorter.sort(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void isExceptionForNullArgumentThrownCorrectly(){
+    public void isExceptionForNullArgumentThrownCorrectly() {
         sorter.sort(null);
     }
 
     @Test
-    public void sortOneElementArray(){
+    public void sortOneElementArray() {
         double[] input = {-23};
         double[] output = sorter.sort(input);
         double[] correctOutput = {-23};
@@ -35,7 +35,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void sortLessThan20Values(){
+    public void sortLessThan20Values() {
         double[] input = {11.3, 128, 231, 0.3, -23, 128, 12};
         double[] output = sorter.sort(input);
         double[] correctOutput = {-23, 0.3, 11.3, 12, 128, 128, 231};

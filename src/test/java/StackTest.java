@@ -1,6 +1,7 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class StackTest {
     Stack<Integer> stack = new Stack<>();
@@ -20,7 +21,7 @@ public class StackTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void testEmptyStackException(){
+    public void testEmptyStackException() {
         stack.push(0);
         stack.pop();
         stack.pop();
