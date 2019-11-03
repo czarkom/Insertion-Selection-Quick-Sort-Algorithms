@@ -55,6 +55,5 @@ public class SelectionSortTest {
             average = sum / attempts;
             System.out.println(i + "\t" + average);
         }
-
     }
 }

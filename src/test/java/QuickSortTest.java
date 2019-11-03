@@ -62,7 +62,6 @@ public class QuickSortTest {
             average = sum / attempts;
             System.out.println(i + "\t" + average);
         }
-
     }
 
     @Test
@@ -86,7 +85,6 @@ public class QuickSortTest {
             average = sum / attempts;
             System.out.println(i + "\t" + average);
         }
-
     }
 
     @Test
@@ -110,7 +108,5 @@ public class QuickSortTest {
             average = sum / attempts;
             System.out.println(i + "\t" + average);
         }
-
     }
-
 }

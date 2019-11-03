@@ -3,7 +3,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
 public class HelpfulMethodsTest {
-
     @Test
     public void swapTest() {
         double[] vector1 = {1, 2};
