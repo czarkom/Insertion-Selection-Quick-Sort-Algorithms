@@ -38,7 +38,7 @@ public class SelectionSortTest {
     public void universalCaseTime() {
         long startTime, endTime, sum, duration, average;
         Random r = new Random();
-        int attempts = 30;
+        int attempts = 80;
         for (int i = 1000; i < 100000; i += 2000) {
             double[] input = new double[i];
             for (int j = 0; j < input.length; j++) {

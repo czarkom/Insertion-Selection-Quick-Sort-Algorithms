@@ -31,9 +31,7 @@ public class QuickSort implements SortingInterface {
         int l = start;
         int h = end - 2;
         double pivot = vector[position];
-        double temp = vector[position];
-        vector[position] = vector[end - 1];
-        vector[end - 1] = temp;
+        HelpfulMethods.swap(vector, position, end - 1);
         while (l < h) {
             if (vector[l] < pivot) {
                 l++;
@@ -43,12 +41,12 @@ public class QuickSort implements SortingInterface {
                 HelpfulMethods.swap(vector, l, h);
             }
         }
-        int idx = h;
+        int index = h;
         if (vector[h] < pivot) {
-            idx++;
+            index++;
         }
-        HelpfulMethods.swap(vector, end - 1, idx);
-        return idx;
+        HelpfulMethods.swap(vector, end - 1, index);
+        return index;
     }
 
 
