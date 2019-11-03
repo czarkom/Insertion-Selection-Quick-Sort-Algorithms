@@ -68,6 +68,30 @@ public class QuickSortTest {
     @Test
     public void negativeCaseTime() {
         long startTime, endTime, sum, duration, average;
+        int attempts = 80;
+        int constant = 12345;
+        for (int i = 1000; i < 50000; i += 2000) {
+            double[] input = new double[i];
+            for (int j = 0; j < input.length; j++) {
+                input[j] = constant;
+            }
+            sum = 0;
+            for (int k = 0; k < attempts; k++) {
+                startTime = System.nanoTime();
+                sorter.sort(input);
+                endTime = System.nanoTime();
+                duration = endTime - startTime;
+                sum += duration;
+            }
+            average = sum / attempts;
+            System.out.println(i + "\t" + average);
+        }
+
+    }
+
+    @Test
+    public void averageCaseTime() {
+        long startTime, endTime, sum, duration, average;
         Random r = new Random();
         int attempts = 80;
         for (int i = 1000; i < 50000; i += 2000) {
