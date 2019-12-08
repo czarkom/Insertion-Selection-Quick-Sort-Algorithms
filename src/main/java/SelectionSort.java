@@ -2,7 +2,7 @@ public class SelectionSort implements SortingInterface {
     @Override
     public double[] sort(double[] unsortedVector) {
         if (unsortedVector == null || unsortedVector.length < 1)
-            throw new IllegalArgumentException("Please give me normal array");
+            throw new IllegalArgumentException("Please give me normal array, you can't pass null or empty arrays to this method");
         double[] output = unsortedVector.clone();
         for (int i = output.length - 1; i >= 1; i--) {
             int max = findMaxValueIndex(output, i);

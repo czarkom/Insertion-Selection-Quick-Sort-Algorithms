@@ -2,7 +2,7 @@ public class QuickSort implements SortingInterface {
     @Override
     public double[] sort(double[] unsortedVector) {
         if (unsortedVector == null || unsortedVector.length < 1)
-            throw new IllegalArgumentException("Please give me normal array");
+            throw new IllegalArgumentException("Please give me normal array, you can't pass null or empty arrays to this method");
         double[] output = unsortedVector.clone();
         if (unsortedVector.length < 20) {
             SortingInterface sorter = new InsertionSort();
@@ -48,6 +48,4 @@ public class QuickSort implements SortingInterface {
         HelpfulMethods.swap(vector, end - 1, index);
         return index;
     }
-
-
 }
